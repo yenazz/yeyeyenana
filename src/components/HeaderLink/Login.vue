@@ -5,7 +5,7 @@
         <img src="../../assets/header/logo.png" alt="logo" />
       </div>
       <div class="select">
-        <div>개인회원</div>
+        <div class="selec">개인회원</div>
         <div>기업회원</div>
       </div>
       <div class="id-pw">
@@ -50,8 +50,39 @@
   </section>
 </template>
 
-<script lang="ts" setup>
-console.log('test')
-</script>
+<script lang="ts" setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+article {
+  text-align: center;
+  padding: 100px 0 200px 0;
+  .logo {
+    img {
+      width: 160px;
+      height: 38px;
+    }
+  }
+  .select {
+    padding: 40px 0 30px 0;
+    display: flex;
+    justify-content: center;
+    div {
+      width: 189px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .selec {
+      border-bottom: 2px solid #191919;
+    }
+  }
+  .id-pw {
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+</style>
