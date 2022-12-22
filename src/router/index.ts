@@ -22,6 +22,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'theme',
     component: () => import('../views/Theme.vue'),
   },
+  {
+    path: '/join',
+    name: 'join',
+    component: () => import('../views/Join.vue'),
+  },
 ]
 
 const router = createRouter({
