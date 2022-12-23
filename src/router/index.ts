@@ -27,6 +27,21 @@ const routes: Array<RouteRecordRaw> = [
     name: 'join',
     component: () => import('../views/Join.vue'),
   },
+  {
+    path: '/joincomplete',
+    name: 'joincomplete',
+    component: () => import('../views/JoinComplete.vue'),
+  },
+  {
+    path: '/findpw',
+    name: 'findpw',
+    component: () => import('../views/FindPw.vue'),
+  },
+  {
+    path: '/resetpw',
+    name: 'resetpw',
+    component: () => import('../views/ResetPw.vue'),
+  },
 ]
 
 const router = createRouter({

@@ -42,43 +42,53 @@
       <div class="info-input">
         <div class="input-box">
           <div class="input-width">
-            <div class="mail">
+            <div class="email">
               <p>이메일</p>
-              <input type="email" placeholder="아이디@도메인 입력" />
+              <div class="input-border">
+                <input type="email" placeholder="아이디@도메인 입력" />
+              </div>
             </div>
 
             <div class="pw">
               <p>비밀번호</p>
-              <input
-                type="password"
-                class="pw-input"
-                placeholder="비밀번호 입력(영문+숫자+특수문자 8-16자)"
-              />
-              <input
-                type="password"
-                class="pw-check"
-                placeholder="비밀번호 확인"
-              />
+              <div class="input-border">
+                <input
+                  type="password"
+                  placeholder="비밀번호 입력(영문+숫자+특수문자 8-16자)"
+                />
+              </div>
+              <div class="input-border">
+                <input type="password" placeholder="비밀번호 확인" />
+              </div>
             </div>
 
             <div class="name">
               <p>이름</p>
-              <input type="text" placeholder="2자 이상 입력" />
+              <div class="input-border">
+                <input type="text" placeholder="2자 이상 입력" />
+              </div>
             </div>
 
             <div class="gender">
-              <button>남자</button>
-              <button>여자</button>
+              <p>성별</p>
+              <div class="gender-btn">
+                <button>남자</button>
+                <button>여자</button>
+              </div>
             </div>
 
             <div class="birth">
               <p>생년월일(6자리)</p>
-              <input type="text" placeholder="220101" />
+              <div class="input-border">
+                <input type="text" placeholder="220101" />
+              </div>
             </div>
 
             <div class="phone">
               <p>전화번호</p>
-              <input type="tel" placeholder="'-'제외 숫자만 입력" />
+              <div class="input-border">
+                <input type="text" placeholder="'-'제외 숫자만 입력" />
+              </div>
             </div>
           </div>
 
@@ -86,7 +96,9 @@
             <p>약관동의</p>
             <div class="clause-box">
               <div class="check-title">
-                <div class="all">전체 동의<input type="checkbox" /></div>
+                <div class="all">
+                  전체 동의<input type="checkbox" value="all" />
+                </div>
                 <div class="check-between">
                   <div class="fourteen">
                     (필수) 만 14세 이상 확인<input type="checkbox" />
@@ -106,8 +118,9 @@
               </div>
             </div>
           </div>
-
-          <div class="complete">회원가입 완료</div>
+          <router-link to="/joincomplete" class="complete">
+            회원가입 완료
+          </router-link>
         </div>
       </div>
     </article>
@@ -141,7 +154,6 @@ article {
   .simple {
     display: flex;
     justify-content: center;
-    padding-bottom: 16px;
     .simple-box {
       border: 1px solid $sectionLine;
       width: 378px;
@@ -194,53 +206,66 @@ article {
     justify-content: center;
     .input-box {
       width: 378px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      .input-width {
+        display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+        gap: 30px;
+        .input-border {
+          border: 1px solid $inputLine;
+          border-radius: 10px;
+          height: 50px;
+          display: flex;
+          padding: 0 16px;
+          input {
+            width: 100%;
+            height: 48px;
+            border: none;
+          }
+          input:focus {
+            outline: none;
+          }
+          input::placeholder {
+            font-size: 15px;
+            color: $inputLine;
+          }
+        }
+        .pw {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          p {
+            padding: 0;
+          }
+        }
+        .gender {
+          .gender-btn {
+            display: flex;
+            gap: 32px;
+            button {
+              width: 100%;
+              background-color: #fff;
+              border: 1px solid $inputLine;
+              border-radius: 10px;
+              height: 50px;
+              font-size: 15px;
+              font-family: pretendard;
+              color: $inputLine;
+              cursor: pointer;
+            }
+          }
+        }
+      }
       p {
         text-align: left;
         padding-bottom: 8px;
         font-size: 14px;
       }
-      .input-width {
-        div {
-          padding-bottom: 30px;
-        }
-        input {
-          width: 378px;
-          border: 1px solid $inputLine;
-          border-radius: 10px;
-          padding: 16px 0;
-        }
-        input::placeholder {
-          color: $inputLine;
-        }
-        input:focus {
-          outline: transparent;
-          border: 1px solid $mainColor;
-        }
-        input:focus::placeholder {
-          color: #191919;
-        }
-        .pw {
-          .pw-input {
-            margin-bottom: 8px;
-          }
-        }
-        .gender {
-          display: flex;
-          justify-content: space-between;
-          gap: 32px;
-          button {
-            width: 100%;
-            background-color: #fff;
-            border: 1px solid $inputLine;
-            color: $inputLine;
-            border-radius: 10px;
-            padding: 16px 0;
-            cursor: pointer;
-          }
-        }
-      }
+
       .clause {
-        padding-bottom: 50px;
         .clause-box {
           border: 1px solid $inputLine;
           border-radius: 10px;
@@ -285,7 +310,24 @@ article {
         display: flex;
         justify-content: center;
         align-items: center;
+        text-decoration: none;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@include tablet {
+  article {
+    .info-input {
+      .input-box {
+        .input-width {
+          .gender {
+            .gender-btn {
+              gap: 24px;
+            }
+          }
+        }
       }
     }
   }
@@ -325,6 +367,11 @@ article {
         .input-width {
           input {
             width: 100%;
+          }
+          .gender {
+            .gender-btn {
+              gap: 8px;
+            }
           }
         }
         .clause {

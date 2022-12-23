@@ -20,23 +20,29 @@
       </div>
 
       <div class="id-pw">
-        <input
-          class="id"
-          type="id"
-          placeholder="이메일 입력"
-          style="font-size: 15px"
-        />
-        <input
-          class="pw"
-          type="password"
-          placeholder="비밀번호"
-          style="font-size: 15px"
-        />
-      </div>
+        <div class="id-pw-box">
+          <div class="id-pw-input">
+            <div class="input-border">
+              <img src="../../assets/join/id.png" alt="id" />
+              <input type="id" placeholder="이메일 입력" />
+            </div>
+            <div class="input-border">
+              <img src="../../assets/join/pw.png" alt="pw" />
+              <input class="pw" type="password" placeholder="비밀번호" />
+            </div>
+          </div>
 
-      <div class="btn">
-        <div class="login-btn">로그인</div>
-        <div class="find-pw">비밀번호 찾기</div>
+          <div class="btn">
+            <div class="btn-box">
+              <button class="login-btn">로그인</button>
+              <div class="pw-btn">
+                <router-link to="/findpw" class="find-link">
+                  비밀번호 찾기
+                </router-link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="simple">
@@ -113,58 +119,70 @@ article {
   .id-pw {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    input {
-      background-repeat: no-repeat;
-      background-size: 12px;
-      background-position: 16px center;
-      border: 1px solid $inputLine;
-      border-radius: 10px;
-      padding: 16px 265px 16px 44px;
-    }
-    input:focus {
-      border: 1px solid transparent;
-      outline: 1px solid $mainColor;
-    }
-    input::placeholder {
-      color: $inputLine;
-    }
-    input:focus::placeholder {
-      color: #191919;
-      font-weight: 500;
-    }
-    .id {
-      background-image: url(../../assets/join/id.png);
-    }
-    .id:focus {
-      background-image: url(../../assets/join/id_select.png);
-    }
-    .pw {
-      background-image: url(../../assets/join/pw.png);
-      margin: 8px 0;
-    }
-    .pw:focus {
-      background-image: url(../../assets/join/pw_select.png);
+    .id-pw-box {
+      width: 378px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .id-pw-input {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .input-border {
+          border: 1px solid $inputLine;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          height: 50px;
+          padding: 0 16px;
+          gap: 8px;
+          img {
+            width: 20px;
+            height: 20px;
+          }
+          input {
+            display: flex;
+            width: 100%;
+            height: 48px;
+            border: none;
+            font-size: 15px;
+          }
+          input::placeholder {
+            color: $inputLine;
+          }
+          input:focus {
+            outline: none;
+          }
+        }
+      }
+      .btn {
+        .btn-box {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          .login-btn {
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            background-color: $mainColor;
+            color: #fff;
+            font-size: 16px;
+            font-family: pretendard;
+            cursor: pointer;
+          }
+          .pw-btn {
+            padding: 12px 0 44px 0;
+            .find-link {
+              font-size: 12px;
+              color: #707070;
+              text-decoration: none;
+            }
+          }
+        }
+      }
     }
   }
-  .btn {
-    div {
-      cursor: pointer;
-    }
-    .login-btn {
-      background-color: $mainColor;
-      display: inline-block;
-      color: #fff;
-      padding: 15px 168px;
-      border-radius: 10px;
-    }
-    .find-pw {
-      font-size: 12px;
-      color: #707070;
-      margin: 12px 0 44px 0;
-    }
-  }
+
   .simple {
     display: flex;
     justify-content: center;
@@ -267,26 +285,17 @@ article {
         cursor: pointer;
       }
     }
+
     .select {
       padding: 0 0 30px 0;
     }
+
     .id-pw {
-      width: 100%;
-      input {
+      .id-pw-box {
         width: 100%;
-        padding: 17px 0 17px 44px;
       }
     }
-    .btn {
-      .login-btn {
-        padding: 15px 0;
-        width: 100%;
-        font-size: 14px;
-      }
-      .find-pw {
-        font-size: 11px;
-      }
-    }
+
     .simple {
       .simple-box {
         width: 100%;
