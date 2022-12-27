@@ -42,6 +42,16 @@ const routes: Array<RouteRecordRaw> = [
     name: 'resetpw',
     component: () => import('../views/ResetPw.vue'),
   },
+  {
+    path: '/resetpwcomplete',
+    name: 'resetpwcomplete',
+    component: () => import('../views/ResetPwComplete.vue'),
+  },
+  {
+    path: '/mymenu',
+    name: 'mymenu',
+    component: () => import('../views/MyMenu.vue'),
+  },
 ]
 
 const router = createRouter({

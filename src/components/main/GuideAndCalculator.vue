@@ -6,7 +6,9 @@
           <img src="../../assets/banner/guide.png" alt="guide" />
         </div>
         <div class="calculator">
-          <img src="../../assets/banner/calculator.png" alt="calculator" />
+          <router-link to="/calculator">
+            <img src="../../assets/banner/calculator.png" alt="calculator" />
+          </router-link>
         </div>
       </div>
       <div v-if="getDevice !== 'pc'" class="tm-wrap">
@@ -14,7 +16,12 @@
           <img src="../../assets/banner/guide_tab.png" alt="guide" />
         </div>
         <div class="calculator">
-          <img src="../../assets/banner/calculator_tab.png" alt="calculator" />
+          <router-link to="/calculator">
+            <img
+              src="../../assets/banner/calculator_tab.png"
+              alt="calculator"
+            />
+          </router-link>
         </div>
       </div>
     </article>

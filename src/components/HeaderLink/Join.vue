@@ -231,6 +231,7 @@ article {
           input::placeholder {
             font-size: 15px;
             color: $inputLine;
+            font-family: pretendard;
           }
         }
         .pw {
@@ -368,6 +369,9 @@ article {
           input {
             width: 100%;
           }
+          input::placeholder {
+            font-size: 13px !important;
+          }
           .gender {
             .gender-btn {
               gap: 8px;
@@ -376,6 +380,9 @@ article {
         }
         .clause {
           padding-top: 20px;
+        }
+        .complete {
+          font-size: 14px;
         }
       }
     }

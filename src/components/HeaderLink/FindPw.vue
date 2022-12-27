@@ -130,6 +130,8 @@ article {
         }
         input::placeholder {
           color: $inputLine;
+          font-family: pretendard;
+          font-size: 15px;
         }
         input:focus {
           outline: none;

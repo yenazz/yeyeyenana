@@ -149,6 +149,8 @@ article {
           }
           input::placeholder {
             color: $inputLine;
+            font-family: pretendard;
+            font-size: 15px;
           }
           input:focus {
             outline: none;
@@ -188,7 +190,6 @@ article {
     justify-content: center;
     padding-bottom: 16px;
     .simple-box {
-      border: 1px solid $sectionLine;
       width: 378px;
       border-left: none;
       border-right: none;
@@ -196,6 +197,25 @@ article {
         font-size: 14px;
         color: $fontMainColor;
         font-weight: 500;
+        display: flex;
+        align-items: center;
+        flex-basis: 100%;
+
+        &::before {
+          content: '';
+          height: 1px;
+          flex-grow: 1;
+          background-color: $sectionLine;
+          margin-right: 6px;
+        }
+
+        &::after {
+          content: '';
+          height: 1px;
+          flex-grow: 1;
+          background-color: $sectionLine;
+          margin-left: 6px;
+        }
       }
       .sns {
         padding: 25px 0 16px 0;
@@ -293,6 +313,20 @@ article {
     .id-pw {
       .id-pw-box {
         width: 100%;
+        .id-pw-input {
+          .input-border {
+            input::placeholder {
+              font-size: 13px;
+            }
+          }
+        }
+        .btn {
+          .btn-box {
+            .login-btn {
+              font-size: 14px;
+            }
+          }
+        }
       }
     }
 
