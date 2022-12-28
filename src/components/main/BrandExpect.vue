@@ -54,7 +54,7 @@ const nextPage = ref<boolean>(false)
 const prevPage = ref<boolean>(false)
 const page = ref<number>(1)
 const pageNum = computed<number>(() => {
-  return getDevice.value === 'pc' ? 12 : getDevice.value === 'tablet' ? 8 : 6
+  return getDevice.value === 'pc' ? 10 : getDevice.value === 'tablet' ? 8 : 6
 })
 
 const getBrandItems = async () => {
@@ -104,8 +104,9 @@ section {
     &.list {
       margin-top: 20px;
       display: grid;
+      justify-content: space-between;
       gap: 30px 24px;
-      grid-template-columns: repeat(6, calc((100% - 120px) / 6));
+      grid-template-columns: repeat(5, calc((100% - 120px) / 5));
     }
 
     .top {
@@ -143,6 +144,7 @@ section {
     article {
       @include tablet-container();
       &.list {
+        padding: 0;
         gap: 30px 24px;
         grid-template-columns: repeat(4, calc((100% - 72px) / 4));
       }
@@ -153,6 +155,7 @@ section {
     article {
       @include mobile-container();
       &.list {
+        padding: 0;
         gap: 20px 8px;
         grid-template-columns: repeat(3, calc((100% - 16px) / 3));
       }

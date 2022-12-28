@@ -89,7 +89,7 @@ const nextPage = ref<boolean>(false)
 const prevPage = ref<boolean>(false)
 const totalCount = ref<number>(0)
 const pageNum = computed<number>(() => {
-  return getDevice.value === 'pc' ? 12 : getDevice.value === 'tablet' ? 8 : 6
+  return getDevice.value === 'pc' ? 10 : getDevice.value === 'tablet' ? 8 : 6
 })
 
 const getThemeBrand = async () => {
@@ -202,8 +202,9 @@ section {
     .theme-list {
       margin-top: 20px;
       display: grid;
+      justify-content: space-between;
       gap: 30px 24px;
-      grid-template-columns: repeat(6, calc((100% - 120px) / 6));
+      grid-template-columns: repeat(5, calc((100% - 120px) / 5));
     }
   }
 
